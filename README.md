@@ -17,9 +17,10 @@ Overview
 7. reactPSN alternative solution for OFW users
 
 
-===========================
+
 Instructions for each tool
-===========================
+--------------------------
+
 
 
 PS3 HAN ACT/IDPS Dumper
