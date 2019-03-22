@@ -1,5 +1,8 @@
 var debug=false;
 
+var ua = navigator.userAgent;
+var fwVersion = ua.substring(ua.indexOf("5.0 (") + 19, ua.indexOf(") Apple"));
+
 var explore_plugin_usb='/explore_plugin.sprx';
 var explore_plugin_blind='/dev_blind/vsh/module/explore_plugin.sprx';
 var explore_plugin_fsize=0x18CD85;
@@ -183,7 +186,59 @@ var gadget_mod13_addr_481_d=0x33E480;
 var gadget_mod14_addr_481_d=0x63AAE0;
 var gadget_mod15_addr_481_d=0x3A4C28;
 var gadget_mod16_addr_481_d=0x4FEF1C;
-//VSH CEX 4.81
+
+//DEX 4.82
+var toc_addr_482_d = 0x705640;
+var prx_explore_plugin_toc_addr_482_d=0x0;// size 0x30
+var vsh_whatsnew_patch_addr_482_d=0x0;// explore_plugin
+var vsh_whatsnew_xml_addr_482_d=0x0;
+var vsh_opd_addr_482_d=0x6FBC58;
+var vsh_opd_patch_482_d=0x096E14;
+var vsh_toc_addr_screenshot_482_d=0x730F1C;
+var vsh_ps3xploit_key_toc_482_d=0x7180DC;
+var default_vsh_pub_toc_482_d=0x6FD694;
+var toc_entry1_addr_482_d=0x6EA4B8;
+var toc_entry2_addr_482_d=0x735F8C;// idps
+var toc_entry3_addr_482_d=0x6EA4B0;
+var toc_entry4_addr_482_d=0x750000;
+var toc_entry5_addr_482_d=0x6FB7B0;
+var toc_entry6_addr_482_d=0x0;
+var gadget1_addr_482_d=0x0976BC;
+var gadget2_addr_482_d=0x611C60;
+var gadget3_addr_482_d=0x0DA5A8;
+var gadget4_addr_482_d=0x231120;
+var gadget5_addr_482_d=0x1329D8;
+var gadget6_addr_482_d=0x61D858;// malloc
+var gadget7_addr_482_d=0x020084;// memset
+var gadget8_addr_482_d=0x0200B4;// memcpy
+var gadget9_addr_482_d=0x029BBC;
+var gadget10_addr_482_d=0x635BA0;//addi 0xC0
+var gadget11_addr_482_d=0x5A20A4;// sprintf
+var gadget12_addr_482_d=0x0CD640;// reboot prep sub
+var gadget13_addr_482_d=0x49619C;// free
+var gadget14_addr_482_d=0x494394;
+var gadget15_addr_482_d=0x49187C;
+var gadget_mod1_addr_482_d=0x616B54;
+var gadget_mod2_addr_482_d=0x013B74;
+var gadget_mod3_addr_482_d=0x0B8EB8;
+var gadget_mod4a_addr_482_d=0x0DEBD8;
+var gadget_mod4b_addr_482_d=0x43436C;
+var gadget_mod4c_addr_482_d=0x054BA8;
+var gadget_mod5_addr_482_d=0x42B4D0;
+var gadget_mod6_addr_482_d=0x020CB4;
+var gadget_mod7_addr_482_d=0x01A6AC;
+var gadget_mod8_addr_482_d=0x2C24E0;
+var gadget_mod9_addr_482_d=0x010B20;
+var gadget_mod10_addr_482_d=0x1CD0B8;
+var gadget_mod11_addr_482_d=0x192190;
+var gadget_mod12_addr_482_d=0x63AD78;
+var gadget_mod13_addr_482_d=0x33E484;
+var gadget_mod14_addr_482_d=0x63B47C;
+var gadget_mod15_addr_482_d=0x3A4C2C;
+var gadget_mod16_addr_482_d=0x4FEF20;
+var e_fopen_write_close=0x42B70C;
+
+//CEX 4.81
 var toc_addr_481 = 0x6F5520;
 var default_vsh_pub_toc_481=0x6ED574;
 var vsh_opd_patch_481=0x096D5C;
@@ -229,8 +284,8 @@ var gadget_mod13_addr_481=0x33686C;
 var gadget_mod14_addr_481=0x632EC4;
 var gadget_mod15_addr_481=0x39D034;
 var gadget_mod16_addr_481=0x4F7328;
-//CEX 4.82
 
+//CEX 4.82
 var toc_addr_482 = 0x6F5550;
 var default_vsh_pub_toc_482=0x6ED5A4;
 var vsh_opd_patch_482=0x96D5C;
@@ -276,6 +331,151 @@ var gadget_mod13_addr_482=0x336870; //store_r3 gadget
 var gadget_mod14_addr_482=0x633860; //load r3 dword
 var gadget_mod15_addr_482=0x39D038; //load r3 word
 var gadget_mod16_addr_482=0x4F732C; //set toc
+
+//CEX 4.83
+var toc_addr_483 = 0x6F5558;
+var default_vsh_pub_toc_483=0x6ED5AC;
+var vsh_opd_patch_483=0x96D5C;
+var vsh_opd_addr_483=0x6EBB70;
+var vsh_toc_addr_screenshot_483=0x72067C;
+var vsh_ps3xploit_key_toc_483=0x70786C;
+var toc_entry1_addr_483=0x6DA3D0;
+var toc_entry2_addr_483=0x725B38;//idps
+var toc_entry3_addr_483=0x6DA3C8;
+var toc_entry4_addr_483=0x740000;
+var toc_entry5_addr_483=0x6EB6C8;
+var toc_entry6_addr_483=0x0;
+var gadget1_addr_483=0x097604;
+var gadget2_addr_483=0x60A0E4;
+var gadget3_addr_483=0x0D505C;
+var gadget4_addr_483=0x229838;
+var gadget5_addr_483=0x12BB1C;
+var gadget6_addr_483=0x615CDC;//malloc
+var gadget7_addr_483=0x01FFD0;//memset
+var gadget8_addr_483=0x020000;//memcpy
+var gadget9_addr_483=0x029B08;
+var gadget10_addr_483=0x62E024;
+var gadget11_addr_483=0x59A4B0;
+var gadget12_addr_483=0x0C864C;
+var gadget13_addr_483=0x48E5A8;//free
+var gadget14_addr_483=0x48C7A0;
+var gadget15_addr_483=0x489C88;
+var gadget_mod1_addr_483=0x60EFD8;
+var gadget_mod2_addr_483=0x013B74;
+var gadget_mod3_addr_483=0x0B8E00;
+var gadget_mod4a_addr_483=0x0D9684;
+var gadget_mod4b_addr_483=0x42C778;
+var gadget_mod4c_addr_483=0x054AF0; //load r5 word
+var gadget_mod5_addr_483=0x4238DC;
+var gadget_mod6_addr_483=0x020C00;
+var gadget_mod7_addr_483=0x01A6AC;
+var gadget_mod8_addr_483=0x2BACB8;
+var gadget_mod9_addr_483=0x010B20;
+var gadget_mod10_addr_483=0x1C5794;
+var gadget_mod11_addr_483=0x18B144;
+var gadget_mod12_addr_483=0x6331FC; //validation gadget
+var gadget_mod13_addr_483=0x336870; //store_r3 gadget
+var gadget_mod14_addr_483=0x633900; //load r3 dword
+var gadget_mod15_addr_483=0x39D038; //load r3 word
+var gadget_mod16_addr_483=0x4F732C; //set toc
+
+//DEX 4.84
+var toc_addr_484_d = 0x705648;
+var prx_explore_plugin_toc_addr_484_d=0x0;// size 0x30
+var vsh_whatsnew_patch_addr_484_d=0x0;// explore_plugin
+var vsh_whatsnew_xml_addr_484_d=0x0;
+var vsh_opd_addr_484_d=0x6FBC60;
+var vsh_opd_patch_484_d=0x096E14;
+var vsh_toc_addr_screenshot_484_d=0x73100C;
+var vsh_ps3xploit_key_toc_484_d=0x7181D4;
+var default_vsh_pub_toc_484_d=0x6FD69C;
+var toc_entry1_addr_484_d=0x6EA4B8;
+var toc_entry2_addr_484_d=0x7364C8;// idps
+var toc_entry3_addr_484_d=0x6EA4B0;
+var toc_entry4_addr_484_d=0x750000;
+var toc_entry5_addr_484_d=0x6FB7B8;
+var toc_entry6_addr_484_d=0x0;
+var gadget1_addr_484_d=0x0976BC;
+var gadget2_addr_484_d=0x611D00;
+var gadget3_addr_484_d=0x0DA5A8;
+var gadget4_addr_484_d=0x231120;
+var gadget5_addr_484_d=0x1329D8;
+var gadget6_addr_484_d=0x61D8F8;// malloc
+var gadget7_addr_484_d=0x020084;// memset
+var gadget8_addr_484_d=0x0200B4;// memcpy
+var gadget9_addr_484_d=0x029BBC;
+var gadget10_addr_484_d=0x635C40;//addi 0xC0
+var gadget11_addr_484_d=0x5A20A4;// sprintf
+var gadget12_addr_484_d=0x0CD640;// reboot prep sub
+var gadget13_addr_484_d=0x49619C;// free
+var gadget14_addr_484_d=0x494394;
+var gadget15_addr_484_d=0x49187C;
+var gadget_mod1_addr_484_d=0x616BF4;
+var gadget_mod2_addr_484_d=0x013B74;
+var gadget_mod3_addr_484_d=0x0B8EB8;
+var gadget_mod4a_addr_484_d=0x0DEBD8;
+var gadget_mod4b_addr_484_d=0x43436C;
+var gadget_mod4c_addr_484_d=0x054BA8;
+var gadget_mod5_addr_484_d=0x42B4D0;
+var gadget_mod6_addr_484_d=0x020CB4;
+var gadget_mod7_addr_484_d=0x01A6AC;
+var gadget_mod8_addr_484_d=0x2C24E0;
+var gadget_mod9_addr_484_d=0x010B20;
+var gadget_mod10_addr_484_d=0x1CD0B8;
+var gadget_mod11_addr_484_d=0x192190;
+var gadget_mod12_addr_484_d=0x63AE18;
+var gadget_mod13_addr_484_d=0x33E484;
+var gadget_mod14_addr_484_d=0x63B51C;
+var gadget_mod15_addr_484_d=0x3A4C2C;
+var gadget_mod16_addr_484_d=0x4FEF20;
+var e_fopen_write_close=0x42B70C;
+
+//CEX 4.84
+var toc_addr_484 = 0x6F5558;
+var default_vsh_pub_toc_484=0x6ED5AC;
+var vsh_opd_patch_484=0x96D5C;
+var vsh_opd_addr_484=0x6EBB70;
+var vsh_toc_addr_screenshot_484=0x72067C;
+var vsh_ps3xploit_key_toc_484=0x70786C;
+var toc_entry1_addr_484=0x6DA3D0;
+var toc_entry2_addr_484=0x725B38;//idps
+var toc_entry3_addr_484=0x6DA3C8;
+var toc_entry4_addr_484=0x740000;
+var toc_entry5_addr_484=0x6EB6C8;
+var toc_entry6_addr_484=0x0;
+var gadget1_addr_484=0x097604;
+var gadget2_addr_484=0x60A0E4;
+var gadget3_addr_484=0x0D505C;
+var gadget4_addr_484=0x229838;
+var gadget5_addr_484=0x12BB1C;
+var gadget6_addr_484=0x615CDC;//malloc
+var gadget7_addr_484=0x01FFD0;//memset
+var gadget8_addr_484=0x020000;//memcpy
+var gadget9_addr_484=0x029B08;
+var gadget10_addr_484=0x62E024;
+var gadget11_addr_484=0x59A4B0;
+var gadget12_addr_484=0x0C864C;
+var gadget13_addr_484=0x48E5A8;//free
+var gadget14_addr_484=0x48C7A0;
+var gadget15_addr_484=0x489C88;
+var gadget_mod1_addr_484=0x60EFD8;
+var gadget_mod2_addr_484=0x013B74;
+var gadget_mod3_addr_484=0x0B8E00;
+var gadget_mod4a_addr_484=0x0D9684;
+var gadget_mod4b_addr_484=0x42C778;
+var gadget_mod4c_addr_484=0x054AF0; //load r5 word
+var gadget_mod5_addr_484=0x4238DC;
+var gadget_mod6_addr_484=0x020C00;
+var gadget_mod7_addr_484=0x01A6AC;
+var gadget_mod8_addr_484=0x2BACB8;
+var gadget_mod9_addr_484=0x010B20;
+var gadget_mod10_addr_484=0x1C5794;
+var gadget_mod11_addr_484=0x18B144;
+var gadget_mod12_addr_484=0x6331FC; //validation gadget
+var gadget_mod13_addr_484=0x336870; //store_r3 gadget
+var gadget_mod14_addr_484=0x633900; //load r3 dword
+var gadget_mod15_addr_484=0x39D038; //load r3 word
+var gadget_mod16_addr_484=0x4F732C; //set toc
 
 function hexh2bin(hex_val)
 {
@@ -928,6 +1128,57 @@ function loadcex_481()
 	gadget_mod15_addr=gadget_mod15_addr_481;
 	gadget_mod16_addr=gadget_mod16_addr_481;
 }
+function loaddex_482()
+{
+	toc_addr = toc_addr_482_d;
+	prx_explore_plugin_toc_addr=prx_explore_plugin_toc_addr_482_d;
+	vsh_whatsnew_patch_addr=vsh_whatsnew_patch_addr_482_d;
+	vsh_whatsnew_xml_addr=vsh_whatsnew_xml_addr_482_d;
+	vsh_opd_addr=vsh_opd_addr_482_d;
+	vsh_opd_patch=vsh_opd_patch_482_d;
+	vsh_toc_addr_screenshot=vsh_toc_addr_screenshot_482_d;
+	vsh_ps3xploit_key_toc=vsh_ps3xploit_key_toc_482_d;
+	default_vsh_pub_toc=default_vsh_pub_toc_482_d;
+	toc_entry1_addr=toc_entry1_addr_482_d;
+	toc_entry2_addr=toc_entry2_addr_482_d;
+	toc_entry3_addr=toc_entry3_addr_482_d;
+	toc_entry4_addr=toc_entry4_addr_482_d;
+	toc_entry5_addr=toc_entry5_addr_482_d;
+	toc_entry6_addr=toc_entry6_addr_482_d;
+	gadget1_addr=gadget1_addr_482_d;
+	gadget2_addr=gadget2_addr_482_d;
+	gadget3_addr=gadget3_addr_482_d;
+	gadget4_addr=gadget4_addr_482_d;
+	gadget5_addr=gadget5_addr_482_d;
+	gadget6_addr=gadget6_addr_482_d;
+	gadget7_addr=gadget7_addr_482_d;
+	gadget8_addr=gadget8_addr_482_d;
+	gadget9_addr=gadget9_addr_482_d;
+	gadget10_addr=gadget10_addr_482_d;
+	gadget11_addr=gadget11_addr_482_d;
+	gadget12_addr=gadget12_addr_482_d;
+	gadget13_addr=gadget13_addr_482_d;
+	gadget14_addr=gadget14_addr_482_d;
+	gadget15_addr=gadget15_addr_482_d;
+	gadget_mod1_addr=gadget_mod1_addr_482_d;
+	gadget_mod2_addr=gadget_mod2_addr_482_d;
+	gadget_mod3_addr=gadget_mod3_addr_482_d;
+	gadget_mod4a_addr=gadget_mod4a_addr_482_d;
+	gadget_mod4b_addr=gadget_mod4b_addr_482_d;
+	gadget_mod4c_addr=gadget_mod4c_addr_482_d;
+	gadget_mod5_addr=gadget_mod5_addr_482_d;
+	gadget_mod6_addr=gadget_mod6_addr_482_d;
+	gadget_mod7_addr=gadget_mod7_addr_482_d;
+	gadget_mod8_addr=gadget_mod8_addr_482_d;
+	gadget_mod9_addr=gadget_mod9_addr_482_d;
+	gadget_mod10_addr=gadget_mod10_addr_482_d;
+	gadget_mod11_addr=gadget_mod11_addr_482_d;
+	gadget_mod12_addr=gadget_mod12_addr_482_d;
+	gadget_mod13_addr=gadget_mod13_addr_482_d;
+	gadget_mod14_addr=gadget_mod14_addr_482_d;
+	gadget_mod15_addr=gadget_mod15_addr_482_d;
+	gadget_mod16_addr=gadget_mod16_addr_482_d;
+}
 function loadcex_482()
 {
 	toc_addr = toc_addr_482;
@@ -976,11 +1227,188 @@ function loadcex_482()
 	gadget_mod15_addr=gadget_mod15_addr_482;
 	gadget_mod16_addr=gadget_mod16_addr_482;
 }
+function loadcex_483()
+{
+	toc_addr = toc_addr_483;
+	vsh_opd_addr=vsh_opd_addr_483;
+	vsh_opd_patch=vsh_opd_patch_483;
+	vsh_toc_addr_screenshot=vsh_toc_addr_screenshot_483;
+	vsh_ps3xploit_key_toc=vsh_ps3xploit_key_toc_483;
+	default_vsh_pub_toc=default_vsh_pub_toc_483;
+	toc_entry1_addr=toc_entry1_addr_483;
+	toc_entry2_addr=toc_entry2_addr_483;
+	toc_entry3_addr=toc_entry3_addr_483;
+	toc_entry4_addr=toc_entry4_addr_483;
+	toc_entry5_addr=toc_entry5_addr_483;
+	toc_entry6_addr=toc_entry6_addr_483;
+	gadget1_addr=gadget1_addr_483;
+	gadget2_addr=gadget2_addr_483;
+	gadget3_addr=gadget3_addr_483;
+	gadget4_addr=gadget4_addr_483;
+	gadget5_addr=gadget5_addr_483;
+	gadget6_addr=gadget6_addr_483;
+	gadget7_addr=gadget7_addr_483;
+	gadget8_addr=gadget8_addr_483;
+	gadget9_addr=gadget9_addr_483;
+	gadget10_addr=gadget10_addr_483;
+	gadget11_addr=gadget11_addr_483;
+	gadget12_addr=gadget12_addr_483;
+	gadget13_addr=gadget13_addr_483;
+	gadget14_addr=gadget14_addr_483;
+	gadget15_addr=gadget15_addr_483;
+	gadget_mod1_addr=gadget_mod1_addr_483;
+	gadget_mod2_addr=gadget_mod2_addr_483;
+	gadget_mod3_addr=gadget_mod3_addr_483;
+	gadget_mod4a_addr=gadget_mod4a_addr_483;
+	gadget_mod4b_addr=gadget_mod4b_addr_483;
+	gadget_mod4c_addr=gadget_mod4c_addr_483;
+	gadget_mod5_addr=gadget_mod5_addr_483;
+	gadget_mod6_addr=gadget_mod6_addr_483;
+	gadget_mod7_addr=gadget_mod7_addr_483;
+	gadget_mod8_addr=gadget_mod8_addr_483;
+	gadget_mod9_addr=gadget_mod9_addr_483;
+	gadget_mod10_addr=gadget_mod10_addr_483;
+	gadget_mod11_addr=gadget_mod11_addr_483;
+	gadget_mod12_addr=gadget_mod12_addr_483;
+	gadget_mod13_addr=gadget_mod13_addr_483;
+	gadget_mod14_addr=gadget_mod14_addr_483;
+	gadget_mod15_addr=gadget_mod15_addr_483;
+	gadget_mod16_addr=gadget_mod16_addr_483;
+}
+function loaddex_484()
+{
+	toc_addr = toc_addr_484_d;
+	vsh_opd_addr=vsh_opd_addr_484_d;
+	vsh_opd_patch=vsh_opd_patch_484_d;
+	vsh_toc_addr_screenshot=vsh_toc_addr_screenshot_484_d;
+	vsh_ps3xploit_key_toc=vsh_ps3xploit_key_toc_484_d;
+	default_vsh_pub_toc=default_vsh_pub_toc_484_d;
+	toc_entry1_addr=toc_entry1_addr_484_d;
+	toc_entry2_addr=toc_entry2_addr_484_d;
+	toc_entry3_addr=toc_entry3_addr_484_d;
+	toc_entry4_addr=toc_entry4_addr_484_d;
+	toc_entry5_addr=toc_entry5_addr_484_d;
+	toc_entry6_addr=toc_entry6_addr_484_d;
+	gadget1_addr=gadget1_addr_484_d;
+	gadget2_addr=gadget2_addr_484_d;
+	gadget3_addr=gadget3_addr_484_d;
+	gadget4_addr=gadget4_addr_484_d;
+	gadget5_addr=gadget5_addr_484_d;
+	gadget6_addr=gadget6_addr_484_d;
+	gadget7_addr=gadget7_addr_484_d;
+	gadget8_addr=gadget8_addr_484_d;
+	gadget9_addr=gadget9_addr_484_d;
+	gadget10_addr=gadget10_addr_484_d;
+	gadget11_addr=gadget11_addr_484_d;
+	gadget12_addr=gadget12_addr_484_d;
+	gadget13_addr=gadget13_addr_484_d;
+	gadget14_addr=gadget14_addr_484_d;
+	gadget15_addr=gadget15_addr_484_d;
+	gadget_mod1_addr=gadget_mod1_addr_484_d;
+	gadget_mod2_addr=gadget_mod2_addr_484_d;
+	gadget_mod3_addr=gadget_mod3_addr_484_d;
+	gadget_mod4a_addr=gadget_mod4a_addr_484_d;
+	gadget_mod4b_addr=gadget_mod4b_addr_484_d;
+	gadget_mod4c_addr=gadget_mod4c_addr_484_d;
+	gadget_mod5_addr=gadget_mod5_addr_484_d;
+	gadget_mod6_addr=gadget_mod6_addr_484_d;
+	gadget_mod7_addr=gadget_mod7_addr_484_d;
+	gadget_mod8_addr=gadget_mod8_addr_484_d;
+	gadget_mod9_addr=gadget_mod9_addr_484_d;
+	gadget_mod10_addr=gadget_mod10_addr_484_d;
+	gadget_mod11_addr=gadget_mod11_addr_484_d;
+	gadget_mod12_addr=gadget_mod12_addr_484_d;
+	gadget_mod13_addr=gadget_mod13_addr_484_d;
+	gadget_mod14_addr=gadget_mod14_addr_484_d;
+	gadget_mod15_addr=gadget_mod15_addr_484_d;
+	gadget_mod16_addr=gadget_mod16_addr_484_d;
+}
+function loadcex_484()
+{
+	toc_addr = toc_addr_484;
+	vsh_opd_addr=vsh_opd_addr_484;
+	vsh_opd_patch=vsh_opd_patch_484;
+	vsh_toc_addr_screenshot=vsh_toc_addr_screenshot_484;
+	vsh_ps3xploit_key_toc=vsh_ps3xploit_key_toc_484;
+	default_vsh_pub_toc=default_vsh_pub_toc_484;
+	toc_entry1_addr=toc_entry1_addr_484;
+	toc_entry2_addr=toc_entry2_addr_484;
+	toc_entry3_addr=toc_entry3_addr_484;
+	toc_entry4_addr=toc_entry4_addr_484;
+	toc_entry5_addr=toc_entry5_addr_484;
+	toc_entry6_addr=toc_entry6_addr_484;
+	gadget1_addr=gadget1_addr_484;
+	gadget2_addr=gadget2_addr_484;
+	gadget3_addr=gadget3_addr_484;
+	gadget4_addr=gadget4_addr_484;
+	gadget5_addr=gadget5_addr_484;
+	gadget6_addr=gadget6_addr_484;
+	gadget7_addr=gadget7_addr_484;
+	gadget8_addr=gadget8_addr_484;
+	gadget9_addr=gadget9_addr_484;
+	gadget10_addr=gadget10_addr_484;
+	gadget11_addr=gadget11_addr_484;
+	gadget12_addr=gadget12_addr_484;
+	gadget13_addr=gadget13_addr_484;
+	gadget14_addr=gadget14_addr_484;
+	gadget15_addr=gadget15_addr_484;
+	gadget_mod1_addr=gadget_mod1_addr_484;
+	gadget_mod2_addr=gadget_mod2_addr_484;
+	gadget_mod3_addr=gadget_mod3_addr_484;
+	gadget_mod4a_addr=gadget_mod4a_addr_484;
+	gadget_mod4b_addr=gadget_mod4b_addr_484;
+	gadget_mod4c_addr=gadget_mod4c_addr_484;
+	gadget_mod5_addr=gadget_mod5_addr_484;
+	gadget_mod6_addr=gadget_mod6_addr_484;
+	gadget_mod7_addr=gadget_mod7_addr_484;
+	gadget_mod8_addr=gadget_mod8_addr_484;
+	gadget_mod9_addr=gadget_mod9_addr_484;
+	gadget_mod10_addr=gadget_mod10_addr_484;
+	gadget_mod11_addr=gadget_mod11_addr_484;
+	gadget_mod12_addr=gadget_mod12_addr_484;
+	gadget_mod13_addr=gadget_mod13_addr_484;
+	gadget_mod14_addr=gadget_mod14_addr_484;
+	gadget_mod15_addr=gadget_mod15_addr_484;
+	gadget_mod16_addr=gadget_mod16_addr_484;
+}
+/*
 function dex()
 {
 		if(document.getElementById('dex').checked===true){loaddex_481();}//alert("calling loaddex_481");
 		else {loadcex_481();}
 		disable_trigger();
+}
+*/
+function dex()
+{
+	switch (fwVersion) {
+		case "4.81":
+			if(document.getElementById('dex').checked===true){loaddex_481();}//alert("calling loaddex_481");
+			else {loadcex_481();}
+			disable_trigger();
+			break;
+			
+		case "4.82":
+			if(document.getElementById('dex').checked===true){loaddex_482();}//alert("calling loaddex_482");
+			else {loadcex_482();}
+			disable_trigger();
+			break;
+			
+		case "4.83":
+			if(document.getElementById('dex').checked===true){loadcex_483();}//alert("calling loaddex_483");
+			else {loadcex_483();}
+			disable_trigger();
+			break;
+			
+		case "4.84":
+			if(document.getElementById('dex').checked===true){loaddex_484();}//alert("calling loaddex_484");
+			else {loadcex_484();}
+			disable_trigger();
+			break;
+			
+		default:
+			break;
+	}
 }
 function initDEX()
 {
@@ -1305,10 +1733,11 @@ function fill_by_16bytes(nbytes,hex_val)
 //########################## End ROP Framework functions by bguerville(under development) #########################
 function ps3chk(){
 
-	var fwCompat = ["4.00","4.10","4.11","4.20","4.21","4.25","4.30","4.31","4.40","4.41","4.45","4.46","4.50","4.53","4.55","4.60","4.65","4.66","4.70","4.75","4.76","4.78","4.80","4.81","4.82"];
+	var fwCompat = ["4.00","4.10","4.11","4.20","4.21","4.25","4.30","4.31","4.40","4.41","4.45","4.46","4.50","4.53","4.55","4.60","4.65","4.66","4.70","4.75","4.76","4.78","4.80","4.81","4.82","4.83","4.84"];
 	var ua = navigator.userAgent;
 	var uaStringCheck = ua.substring(ua.indexOf("5.0 (") + 5, ua.indexOf(") Apple") - 7);
 	var fwVersion = ua.substring(ua.indexOf("5.0 (") + 19, ua.indexOf(") Apple"));
+	var msgHFW = "ATTENTION!\n\nYour firmware version requires 4.84 HFW (Hybrid Firmware) to be installed, containing exploitable modules.";
 	var msgCongrats = "Congratulations! We've detected your PlayStation 3 is running FW " + fwVersion + ", which is compatible with PS3Xploit! Enjoy!";
 	switch (uaStringCheck) {
 		case "PLAYSTATION":
@@ -1321,7 +1750,20 @@ function ps3chk(){
 					
 				case fwCompat[24]:
 					alert(msgCongrats);
+					initDEX();
 					loadcex_482();
+					break;
+					
+				case fwCompat[25]:
+					alert(msgHFW);
+					initDEX();
+					loadcex_483();
+					break;
+					
+				case fwCompat[26]:
+					alert(msgHFW);
+					initDEX();
+					loadcex_484();
 					break;
 					
 				default:
