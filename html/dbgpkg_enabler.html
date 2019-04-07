@@ -28,6 +28,7 @@ function initROP(init)
 		//############################ Building stack frame ###############################################################
 		stack_frame=stack_frame_hookup()
 		+store_word(vsh_opd_addr, vsh_opd_patch)
+		+store_word(ipf1_addr_484, ipf2_addr_484) 
 		//graceful exit
 		+stack_frame_exit();
 //############################ End stack frame ###############################################################		
