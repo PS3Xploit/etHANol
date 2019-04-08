@@ -134,6 +134,8 @@ var gadget_mod13_addr=0;
 var gadget_mod14_addr=0;
 var gadget_mod15_addr=0;
 var gadget_mod16_addr=0;
+var ipf1_addr=0; 
+var ipf2_addr=0; 
 var xtra_data;var stack_frame;var jump_2;var jump_1;var xtra_data_addr;var stack_frame_addr;var jump_2_addr;var jump_1_addr;
 var fail_msg_frag=hr+"<h1><b>Exploit Initialization FAILED!</h1><h2><span style='color:#000000;'><a href=\"javascript:window.location.reload();\">Refresh this page</a> & try again...</span></b></h2>";
 var progress_msg_frag1=hr+"<h1><b>Exploit Initialization..."+br+"<span style='color:#000000;'>Progress: ";
@@ -186,6 +188,8 @@ var gadget_mod13_addr_481_d=0x33E480;
 var gadget_mod14_addr_481_d=0x63AAE0;
 var gadget_mod15_addr_481_d=0x3A4C28;
 var gadget_mod16_addr_481_d=0x4FEF1C;
+var ipf1_addr_481_d=0x6FBC60; //fix offset
+var ipf2_addr_481_d=0x50EF68; //fix offset
 
 //DEX 4.82
 var toc_addr_482_d = 0x705640;
@@ -286,6 +290,8 @@ var gadget_mod13_addr_481=0x33686C;
 var gadget_mod14_addr_481=0x632EC4;
 var gadget_mod15_addr_481=0x39D034;
 var gadget_mod16_addr_481=0x4F7328;
+var ipf1_addr_481=0x6ebb70; //fix offset
+var ipf2_addr_481=0x507374; //fix offset
 
 //CEX 4.82
 var toc_addr_482 = 0x6F5550;
@@ -382,6 +388,8 @@ var gadget_mod13_addr_483=0x336870; //store_r3 gadget
 var gadget_mod14_addr_483=0x633900; //load r3 dword
 var gadget_mod15_addr_483=0x39D038; //load r3 word
 var gadget_mod16_addr_483=0x4F732C; //set toc
+var ipf1_addr_483=0x6ebb78; 
+var ipf2_addr_483=0x507374; 
 
 //DEX 4.84
 var toc_addr_484_d = 0x705648;
@@ -1088,6 +1096,8 @@ function loaddex_481()
 	gadget_mod14_addr=gadget_mod14_addr_481_d;
 	gadget_mod15_addr=gadget_mod15_addr_481_d;
 	gadget_mod16_addr=gadget_mod16_addr_481_d;
+	ipf1_addr=ipf1_addr_481_d;
+	ipf2_addr=ipf2_addr_481_d;
 }
 function loadcex_481()
 {
@@ -1136,6 +1146,8 @@ function loadcex_481()
 	gadget_mod14_addr=gadget_mod14_addr_481;
 	gadget_mod15_addr=gadget_mod15_addr_481;
 	gadget_mod16_addr=gadget_mod16_addr_481;
+	ipf1_addr=ipf1_addr_481;
+	ipf2_addr=ipf2_addr_481;
 }
 function loaddex_482()
 {
@@ -1145,8 +1157,6 @@ function loaddex_482()
 	vsh_whatsnew_xml_addr=vsh_whatsnew_xml_addr_482_d;
 	vsh_opd_addr=vsh_opd_addr_482_d;
 	vsh_opd_patch=vsh_opd_patch_482_d;
-	ipf1_addr=ipf1_addr_482_d;
-	ipf2_addr=ipf2_addr_482_d;
 	vsh_toc_addr_screenshot=vsh_toc_addr_screenshot_482_d;
 	vsh_ps3xploit_key_toc=vsh_ps3xploit_key_toc_482_d;
 	default_vsh_pub_toc=default_vsh_pub_toc_482_d;
@@ -1189,14 +1199,14 @@ function loaddex_482()
 	gadget_mod14_addr=gadget_mod14_addr_482_d;
 	gadget_mod15_addr=gadget_mod15_addr_482_d;
 	gadget_mod16_addr=gadget_mod16_addr_482_d;
+	ipf1_addr=ipf1_addr_482_d;
+	ipf2_addr=ipf2_addr_482_d;
 }
 function loadcex_482()
 {
 	toc_addr = toc_addr_482;
 	vsh_opd_addr=vsh_opd_addr_482;
 	vsh_opd_patch=vsh_opd_patch_482;
-	ipf1_addr=ipf1_addr_482;
-	ipf2_addr=ipf2_addr_482;
 	vsh_toc_addr_screenshot=vsh_toc_addr_screenshot_482;
 	vsh_ps3xploit_key_toc=vsh_ps3xploit_key_toc_482;
 	default_vsh_pub_toc=default_vsh_pub_toc_482;
@@ -1239,6 +1249,8 @@ function loadcex_482()
 	gadget_mod14_addr=gadget_mod14_addr_482;
 	gadget_mod15_addr=gadget_mod15_addr_482;
 	gadget_mod16_addr=gadget_mod16_addr_482;
+	ipf1_addr=ipf1_addr_482;
+	ipf2_addr=ipf2_addr_482;
 }
 function loadcex_483()
 {
@@ -1287,13 +1299,13 @@ function loadcex_483()
 	gadget_mod14_addr=gadget_mod14_addr_483;
 	gadget_mod15_addr=gadget_mod15_addr_483;
 	gadget_mod16_addr=gadget_mod16_addr_483;
+	ipf1_addr=ipf1_addr_483;
+	ipf2_addr=ipf2_addr_483;
 }
 function loaddex_484()
 {
 	toc_addr = toc_addr_484_d;
 	vsh_opd_addr=vsh_opd_addr_484_d;
-	ipf1_addr=ipf1_addr_484_d;
-	ipf2_addr=ipf2_addr_484_d;
 	vsh_opd_patch=vsh_opd_patch_484_d;
 	vsh_toc_addr_screenshot=vsh_toc_addr_screenshot_484_d;
 	vsh_ps3xploit_key_toc=vsh_ps3xploit_key_toc_484_d;
@@ -1337,13 +1349,13 @@ function loaddex_484()
 	gadget_mod14_addr=gadget_mod14_addr_484_d;
 	gadget_mod15_addr=gadget_mod15_addr_484_d;
 	gadget_mod16_addr=gadget_mod16_addr_484_d;
+	ipf1_addr=ipf1_addr_484_d;
+	ipf2_addr=ipf2_addr_484_d;
 }
 function loadcex_484()
 {
 	toc_addr = toc_addr_484;
 	vsh_opd_addr=vsh_opd_addr_484;
-	ipf1_addr=ipf1_addr_484;
-	ipf2_addr=ipf2_addr_484;
 	vsh_opd_patch=vsh_opd_patch_484;
 	vsh_toc_addr_screenshot=vsh_toc_addr_screenshot_484;
 	vsh_ps3xploit_key_toc=vsh_ps3xploit_key_toc_484;
@@ -1387,6 +1399,8 @@ function loadcex_484()
 	gadget_mod14_addr=gadget_mod14_addr_484;
 	gadget_mod15_addr=gadget_mod15_addr_484;
 	gadget_mod16_addr=gadget_mod16_addr_484;
+	ipf1_addr=ipf1_addr_484;
+	ipf2_addr=ipf2_addr_484;
 }
 /*
 function dex()
