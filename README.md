@@ -2,7 +2,14 @@
 v3 HAN Tools: A Collection of Tools Targetting 3000/4000 Series Slim/Superslim To Allow OFW Package Manager and More
 
 
-PS3Xploit Tools v3.0
+PS3Xploit Tools v3.0.1
+
+
+** 20190321 - ADDED SUPPORT FOR 4.83/4.84 HFW (Hybrid Firmware) thanks joonie/habib! **
+
+** 20190407 - ADDED SUPPORT FOR Batch Install All Packages for HAN Enabler & Debug PKG Enabler thanks joonie/habib! **
+
+** 20190409 - Renamed old support files to han_supportfiles-482.zip **
 
 
 Overview
@@ -17,10 +24,9 @@ Overview
 7. reactPSN alternative solution for OFW users
 
 
-
+===========================
 Instructions for each tool
---------------------------
-
+===========================
 
 
 PS3 HAN ACT/IDPS Dumper
@@ -118,5 +124,5 @@ This will allow Debug Package types to be installed
 
 
 
-Team PS3Xploit 2018
+Team PS3Xploit 2019
 ps3xploit.com
