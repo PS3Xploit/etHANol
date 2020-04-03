@@ -2,7 +2,10 @@
 v3 HAN Tools: A Collection of Tools Targetting 3000/4000 Series Slim/Superslim To Allow OFW Package Manager and More
 
 
-PS3Xploit Tools v3.0.2
+PS3Xploit Tools v3.0.3
+
+
+** 20200331 - ADDED SUPPORT FOR 4.86 HFW (Hybrid Firmware) thanks joonie/habib! **
 
 ** 20190931 - ADDED SUPPORT FOR 4.85 HFW (Hybrid Firmware) thanks joonie/habib! **
 
