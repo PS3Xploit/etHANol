@@ -588,6 +588,8 @@ var gadget_mod13_addr_486=0x336870; //store_r3 gadget
 var gadget_mod14_addr_486=0x633900; //load r3 dword
 var gadget_mod15_addr_486=0x39D038; //load r3 word
 var gadget_mod16_addr_486=0x4F732C; //set toc
+var ipf1_addr_486=0x6ebb78; 
+var ipf2_addr_486=0x507374; 
 
 
 function hexh2bin(hex_val)
@@ -1595,6 +1597,8 @@ function loadcex_486()
 	gadget_mod14_addr=gadget_mod14_addr_486;
 	gadget_mod15_addr=gadget_mod15_addr_486;
 	gadget_mod16_addr=gadget_mod16_addr_486;
+	ipf1_addr=ipf1_addr_486;
+	ipf2_addr=ipf2_addr_486;
 }
 /*
 function dex()
