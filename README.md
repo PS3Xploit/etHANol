@@ -2,7 +2,16 @@
 v3 HAN Tools: A Collection of Tools Targetting 3000/4000 Series Slim/Superslim To Allow OFW Package Manager and More
 
 
-PS3Xploit Tools v3.0.5
+PS3Xploit Tools v3.0.6
+
+
+** 20220520 - ADDED SUPPORT FOR 4.89 HFW (Hybrid Firmware) thanks littlebalup! **
+<br>
+
+<b><i>4.89 DISCLAIMER: There will be XMB artifacts and alignment issues on some items and menus. This is due to the DEX version of explore_plugin.sprx being needed for package manager to work properly. There is currently no fix for this, without having a 4.89+ DEX file for replacement.
+<br>
+It is advised to install the HAN_489_Fix_272p_480p_Resolutions_signed.pkg which is the same fix that PS3HEN uses, from sandungas.</b></i>
+<br>
 
 
 ** 20210606 - ADDED SUPPORT FOR 4.88 HFW (Hybrid Firmware) thanks zecoxao/joonie! **
@@ -18,6 +27,7 @@ PS3Xploit Tools v3.0.5
 ** 20190407 - ADDED SUPPORT FOR Batch Install All Packages for HAN Enabler & Debug PKG Enabler thanks joonie/habib! **
 
 ** 20190409 - Renamed old support files to han_supportfiles-482.zip **
+
 
 
 Overview
@@ -132,5 +142,5 @@ This will allow Debug Package types to be installed
 
 
 
-Team PS3Xploit 2019
+Team PS3Xploit 2022
 ps3xploit.com
