@@ -5,16 +5,16 @@ v3 HAN Tools: A Collection of Tools Targetting 3000/4000 Series Slim/Superslim T
 PS3Xploit Tools v3.0.7
 
 
-** 20230409 - ADDED SUPPORT FOR 4.90 HFW (Hybrid Firmware) thanks joonie! **
-
-** 20220520 - ADDED SUPPORT FOR 4.89 HFW (Hybrid Firmware) thanks littlebalup! **
 <br>
 
-<b><i>4.89 DISCLAIMER: There will be XMB artifacts and alignment issues on some items and menus. This is due to the DEX version of explore_plugin.sprx being needed for package manager to work properly. There is currently no fix for this, without having a 4.89+ DEX file for replacement.
+<b><i>4.89+ DISCLAIMER: There will be XMB artifacts and alignment issues on some items and menus. This is due to the DEX version of explore_plugin.sprx being needed for package manager to work properly. There is currently no fix for this, without having a 4.89+ DEX file for replacement.
 <br>
 It is advised to install the HAN_489_Fix_272p_480p_Resolutions_signed.pkg which is the same fix that PS3HEN uses, from sandungas.</b></i>
 <br>
 
+** 20230409 - ADDED SUPPORT FOR 4.90 HFW (Hybrid Firmware) thanks joonie! **
+
+** 20220520 - ADDED SUPPORT FOR 4.89 HFW (Hybrid Firmware) thanks littlebalup! **
 
 ** 20210606 - ADDED SUPPORT FOR 4.88 HFW (Hybrid Firmware) thanks zecoxao/joonie! **
 
