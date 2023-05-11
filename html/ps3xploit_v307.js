@@ -192,6 +192,8 @@ var gadget_mod13_addr_480=0x336878;
 var gadget_mod14_addr_480=0x632EB0;
 var gadget_mod15_addr_480=0x39D040;
 var gadget_mod16_addr_480=0x4F7318;
+var ipf1_addr_480=0x6EBB40;
+var ipf2_addr_480=0x507360;
 
 //DEX 4.81
 var toc_addr_481_d = 0x705610;
@@ -239,8 +241,8 @@ var gadget_mod13_addr_481_d=0x33E480;
 var gadget_mod14_addr_481_d=0x63AAE0;
 var gadget_mod15_addr_481_d=0x3A4C28;
 var gadget_mod16_addr_481_d=0x4FEF1C;
-var ipf1_addr_481_d=0x6FBC60; //fix offset
-var ipf2_addr_481_d=0x50EF68; //fix offset
+var ipf1_addr_481_d=0x6FBC30;
+var ipf2_addr_481_d=0x50EF64;
 
 //DEX 4.82
 var toc_addr_482_d = 0x705640;
@@ -341,8 +343,8 @@ var gadget_mod13_addr_481=0x33686C;
 var gadget_mod14_addr_481=0x632EC4;
 var gadget_mod15_addr_481=0x39D034;
 var gadget_mod16_addr_481=0x4F7328;
-var ipf1_addr_481=0x6ebb70; //fix offset
-var ipf2_addr_481=0x507374; //fix offset
+var ipf1_addr_481=0x6EBB40;
+var ipf2_addr_481=0x507370;
 
 //CEX 4.82
 var toc_addr_482 = 0x6F5550;
@@ -835,6 +837,8 @@ var gadget_mod13_addr_490=0x33686C; //store_r3 gadget
 var gadget_mod14_addr_490=0x6338F8; //load r3 dword
 var gadget_mod15_addr_490=0x39D034; //load r3 word
 var gadget_mod16_addr_490=0x4F7328; //set toc
+var ipf1_addr_490=0x6ebb78;
+var ipf2_addr_490=0x507374;
 
 function hexh2bin(hex_val)
 {
@@ -1474,6 +1478,8 @@ function loadcex_480()
 	gadget_mod14_addr=gadget_mod14_addr_480;
 	gadget_mod15_addr=gadget_mod15_addr_480;
 	gadget_mod16_addr=gadget_mod16_addr_480;
+	ipf1_addr=ipf1_addr_480;
+	ipf2_addr=ipf2_addr_480;
 }
 function loaddex_481()
 {
@@ -2125,6 +2131,8 @@ function loadcex_490()
 	gadget_mod14_addr=gadget_mod14_addr_490;
 	gadget_mod15_addr=gadget_mod15_addr_490;
 	gadget_mod16_addr=gadget_mod16_addr_490;
+	ipf1_addr=ipf1_addr_490;
+	ipf2_addr=ipf2_addr_490;
 }
 /*
 function dex()
