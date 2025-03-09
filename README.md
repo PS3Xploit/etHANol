@@ -12,6 +12,10 @@ PS3Xploit Tools v3.0.7
 It is advised to install the HAN_489_Fix_272p_480p_Resolutions_signed.pkg which is the same fix that PS3HEN uses, from sandungas.</b></i>
 <br>
 
+** 20250309 - ADDED SUPPORT FOR 4.92 HFW (Hybrid Firmware) thanks joonie! **
+
+** 20240317 - ADDED SUPPORT FOR 4.91 HFW (Hybrid Firmware) thanks joonie! **
+
 ** 20230409 - ADDED SUPPORT FOR 4.90 HFW (Hybrid Firmware) thanks joonie! **
 
 ** 20220520 - ADDED SUPPORT FOR 4.89 HFW (Hybrid Firmware) thanks littlebalup! **
